@@ -1,5 +1,5 @@
 1. Math.floor( Math.random() * 7 )
-2. return roll array.push(roll).display
+2. return roll array.push(roll).displa
 3. if (roll == 1) {
   result = end turn
 }
@@ -13,3 +13,6 @@
 6. if (total => 100){
   return win statement + player[id]
 }
+var results = [];
+
+var roll = (Math.floor( (Math.random() * 6)+1 )
