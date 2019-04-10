@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src ="js/jquery-3.3.1.js"></script>
+  <script src ="js/jquery-3.3.1.js"></script>
   <script src ="js/scripts.js"></script>
   <link href ="css/bootstrap.css" rel="stylesheet">
   <link href ="css/styles.css" rel="stylesheet">
@@ -9,20 +9,22 @@
     <title> Pig Dice</title>
   </head>
   <body>
+    <div class="container">
+
     <h1>Pig Game</h1>
     <h2>Player 1</h2>
-    <div class="container">
-      <form id="pigDice">
+
         <label for="roll">Roll your dice</label>
 
-        <button type="button" class="btn btn-outline-info">Roll</button><br><br>
+        <button type="button" class="btn btn-outline-info" id="roll">Roll</button><br><br>
         <label for="roll">Hold your points</label>
-        <div id="result">
 
+        <div id="result">
         </div>
 
-        <button type="button" class="btn btn-outline-info">Hold</button>
-      </form>
+        <button type="button" class="btn btn-outline-info" id="hold">Hold</button>
+
+
       <div id="total">
 
       </div>
