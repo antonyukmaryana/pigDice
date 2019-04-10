@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
   $("button#roll").click(function() {
-    alert( "roll button clicked" );
-    console.log("roll button clicked");
+    $("#result").append(Math.floor( (Math.random() * 6)+1 ));
+  });
+  $("button#hold").click(function() {
+    console.log("hold button clicked");
   });
 });
