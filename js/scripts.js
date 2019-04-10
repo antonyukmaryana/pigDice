@@ -4,9 +4,8 @@
 
 var points = [];
 var sum = 0
-function roll() {
-return Math.floor( (Math.random() * 6)+1)
-};
+
+
 
 function result(roll) {
   if (roll == 1) {
@@ -15,11 +14,19 @@ function result(roll) {
     points.push(roll);
   }
 };
+function Player (name){
+  this.name = inputname
 
-function total() {
-  function getSum(total, num) {
-  return total + num;
-  console.log(points.reduce(getSum));
+var player1= new Player
+
+Player.prototype.roll = function(roll){
+  return Math.floor( (Math.random() * 6)+1)
+  };
+
+//function total() {
+  //function getSum(total, num) {
+  //return total + num;
+  //console.log(points.reduce(getSum));
 }
 };
 
