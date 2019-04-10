@@ -1,5 +1,5 @@
 1. Math.floor( Math.random() * 7 )
-2. return roll array.push(roll)
+2. return roll array.push(roll).display
 3. if (roll == 1) {
   result = end turn
 }
