@@ -1,35 +1,62 @@
 
 //Back end ----
-//var roll = Math.floor( (Math.random() * 6)+1)
 
-var points = [];
-var sum = 0
+//Game  ---
+var Game = {
 
-
-
-function result(roll) {
-  if (roll == 1) {
-    console.log("turn over!");
-  }else {
-    points.push(roll);
-  }
+let playerOne = new Player("Maryana", 0, 0),
+let playerTwo = new Player("Zema", 0, 0),
+//playerOneTurn: true
+//playerTwoTurn: false
 };
-function Player (name){
-  this.name = inputname
 
-var player1= new Player
-
-Player.prototype.roll = function(roll){
-  return Math.floor( (Math.random() * 6)+1)
+Game.prototype.result = function result (roll) {
+  if (playerOne.roll > 1){
+    points.push(playerOne.roll)
+  }else{
+    console.log("turn over!")
+  }
   };
 
-//function total() {
-  //function getSum(total, num) {
-  //return total + num;
-  //console.log(points.reduce(getSum));
-}
+//Player constructor ---
+
+function Player(firstName, current, total) {
+  this.firstName = firstName;
+  this.current = current;
+  this.total = total;
 };
 
+//Player Prototypes
+Player.prototype.roll = function(roll){
+  const diceRollResult = Math.floor( (Math.random() * 6)+1);
+  if (diceRollResult > 1){
+    this.total += diceRollResult;
+    console.log(diceRollResult);
+  }else{
+    console.log("turn over!")
+  }
+};
+Player.prototype.result = function result(rollPlayer) {
+  if (rollPlayer == 1) {
+    console.log("turn over!");
+  }else {
+    points.push(rollPlayer);
+  }
+};
+
+Player.prototype.totalPoints = function getSum(total, num) {
+return total + num;
+};
+
+
+
+
+
+
+
+
+
+//Front End---
 $(document).ready(function() {
 
   $("button#roll").click(function() {
