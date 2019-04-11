@@ -2,21 +2,23 @@
 //Back end ----
 
 //Game  ---
-var Game = {
 
-let playerOne = new Player("Maryana", 0, 0),
-let playerTwo = new Player("Zema", 0, 0),
+playerOne = new Player("Maryana", 0, 0);
+playerTwo = new Player("Zema", 0, 0);
+
+var Game = {
+playerOne, playerTwo
 //playerOneTurn: true
 //playerTwoTurn: false
 };
 
-Game.prototype.result = function result (roll) {
-  if (playerOne.roll > 1){
-    points.push(playerOne.roll)
-  }else{
-    console.log("turn over!")
-  }
-  };
+// //Game.prototype.result = function result (roll) {
+//   if (playerOne.roll > 1){
+//     points.push(playerOne.roll)
+//   }else{
+//     console.log("turn over!")
+//   }
+//   };
 
 //Player constructor ---
 
@@ -30,10 +32,11 @@ function Player(firstName, current, total) {
 Player.prototype.roll = function(roll){
   const diceRollResult = Math.floor( (Math.random() * 6)+1);
   if (diceRollResult > 1){
-    this.total += diceRollResult;
+    this.current += diceRollResult;
     console.log(diceRollResult);
   }else{
-    console.log("turn over!")
+    this.current = 0;
+    console.log("turn over")
   }
 };
 Player.prototype.result = function result(rollPlayer) {
