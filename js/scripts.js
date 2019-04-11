@@ -39,15 +39,28 @@ Player.prototype.hold = function (hold){
    this.current = 0;
  }
 }
+//Taking Turns ---
+var playerOneTurn = true;
+
+function switchPlayer() {
+  if (playerOneTurn) {
+    let roll = playerOne.roll();
+    let hold = playerOne.hold();
+  } else if (!playerOneTurn){
+    let roll = playerTwo.roll();
+    let hold = playerTwo.hold();
+  }
+}
+
 //Front End---
 $(document).ready(function() {
 $("button#roll").click(function() {
-   playerOne.roll()
-  $("#result").append(playerOne.current+", ")
+   return roll;
+  $("#result").append(roll)
   });
 
   $("button#hold").click(function() {
-    playerOne.hold()
+    Player.hold()
    $("#total").append(playerOne.total)
   });
 });
