@@ -24,27 +24,30 @@ Player.prototype.roll = function(roll){
   const diceRollResult = Math.floor( (Math.random() * 6)+1);
   if (diceRollResult > 1){
     this.current += diceRollResult;
-    return diceRollResult;
+    return this.current +" "+diceRollResult;
   }else{
     this.current = 0;
-    console.log("turn over")
   }
 };
-Player.prototype.result = function result(rollPlayer) {
-  if (rollPlayer == 1) {
-    console.log("turn over!");
-  }else {
-    points.push(rollPlayer);
-  }
-};
+
+Player.prototype.hold = function (hold){
+ const diceRollResult = Math.floor( (Math.random() * 6)+1);
+ if (diceRollResult === 1){
+   this.total += 0;
+ }else{
+   this.total+=this.current;
+   this.current = 0;
+ }
+}
 //Front End---
 $(document).ready(function() {
 $("button#roll").click(function() {
    playerOne.roll()
-  $("#result").append(playerOne.roll())
+  $("#result").append(playerOne.current+", ")
   });
 
   $("button#hold").click(function() {
-    console.log("hold button clicked");
+    playerOne.hold()
+   $("#total").append(playerOne.total)
   });
 });
